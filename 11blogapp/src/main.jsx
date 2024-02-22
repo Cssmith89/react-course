@@ -8,7 +8,7 @@ import store from './store/store.js'
 
 import Home from './pages/Home.jsx'
 import Login from './pages/Login.jsx'
-import AuthLayout from './components/AuthLayout.jsx'
+import Protected from './components/AuthLayout.jsx'
 import SignUp from './pages/SignUp.jsx'
 import AllPosts from './pages/AllPosts.jsx'
 import AddPost from './pages/AddPost.jsx'
@@ -28,49 +28,49 @@ const router = createBrowserRouter([
       {
         path: "/login",
         element: (
-          <AuthLayout authentication={false}>
+          <Protected authentication={false}>
             <Login />
-          </AuthLayout>
+          </Protected>
         ),
       },
       {
         path: "/signup",
         element: (
-          <AuthLayout authentication={false}>
+          <Protected authentication={false}>
             <SignUp />
-          </AuthLayout>
+          </Protected>
         ),
       },
       {
         path: "/all-posts",
         element: (
-          <AuthLayout authentication>
+          <Protected authentication>
             <AllPosts />
-          </AuthLayout>
+          </Protected>
         ),
       },
       {
         path: "/add-post",
         element: (
-          <AuthLayout authentication>
+          <Protected authentication>
             <AddPost />
-          </AuthLayout>
+          </Protected>
         ),
       },
       {
         path: "/edit-post/:slug",
         element: (
-          <AuthLayout authentication>
+          <Protected authentication>
             <EditPost />
-          </AuthLayout>
+          </Protected>
         ),
       },
       {
         path: "/post/:slug",
         element: (
-          <AuthLayout authentication>
+          <Protected authentication>
             <Post />
-          </AuthLayout>
+          </Protected>
         ),
       },
     ]
